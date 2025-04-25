@@ -20,6 +20,11 @@ export const routes: Routes = [
                     import('./gifs/pages/search-page/search-page.component'),   //es necesario añadir export default en el componente para manejar la promesa.
             },
 
+            {
+                path: 'history/:query',
+                loadComponent: () =>
+                    import('./gifs/pages/gif-history/gif-history.component'),   //es necesario añadir export default en el componente para manejar la promesa.
+            },
 
             {
                 path: '**',

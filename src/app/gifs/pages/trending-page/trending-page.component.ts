@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { GifListComponent } from "../../components/gif-list/gif-list.component";
+import { GifService } from '../../services/gifs.service';
 
 const imageUrls: string[] = [
   "https://flowbite.s3.amazonaws.com/docs/gallery/square/image.jpg",
@@ -24,4 +25,9 @@ const imageUrls: string[] = [
 })
 export default class TrendingPageComponent { 
   gifs =  signal (imageUrls);
+
+  gifService = inject( GifService )  // Verifica si hay algún instancia de GifService. Si hay, la inyecta con el data que tenga. Si no existe, crea una nueva instancia.
+
+
+  
  }
